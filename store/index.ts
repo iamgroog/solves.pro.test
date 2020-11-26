@@ -23,6 +23,13 @@ export const mutations = {
    * @param {String} mode Режим отображения
    */
   CHANGE_MODE(state: RootState, mode: Mode = "edit"){
-    state.mode = mode;
+    const modes = ["edit", "preview"];
+    const defaultMode = "edit";
+
+    if (modes.includes(mode)){
+      state.mode = mode;
+    } else {
+      state.mode = defaultMode;
+    }
   }
 }
