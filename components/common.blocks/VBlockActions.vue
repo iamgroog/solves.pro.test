@@ -1,7 +1,6 @@
 <template lang="pug">
   div.v-block-actions(
     :style="backgroundImageStyle"
-    @touchend="onTouchEnd"
   )
     transition(
       name="t-fade"
