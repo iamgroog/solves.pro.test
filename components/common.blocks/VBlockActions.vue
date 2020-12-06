@@ -58,6 +58,10 @@
         return "Блок";
       },
       backgroundImageStyle(): object {
+        if(!this.isBlockMoving){
+          return {};
+        }
+
         const content = this.block.content;
         if(content && content instanceof BlockImage) {
           return {
