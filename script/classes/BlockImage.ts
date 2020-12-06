@@ -2,11 +2,11 @@
  * Описание контейнера c текстом
  */
 export default class BlockImage {
-  name: string;
+  url: string;
   size: "cover" | "contain";
 
-  constructor(name: string = "") {
-    this.name = name;
+  constructor(url: string = "") {
+    this.url = url;
     this.size = "cover";
   }
 }

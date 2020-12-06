@@ -2,14 +2,14 @@
  * Описание контейнера c текстом
  */
 export default class BlockText {
-  size: number;
+  size: string;
   align: "left" | "center" | "right";
   color: string;
   text: string;
 
   constructor(text: string = "") {
     this.text = text;
-    this.size = 16;
+    this.size = "medium";
     this.color = "black";
     this.align = "left"
   }
