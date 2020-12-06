@@ -44,23 +44,24 @@
       ...mapGetters("design", [
         "isBlockMoving"
       ]),
-      contentType(): string {
-        if(this.block.content instanceof BlockImage){ return "image" }
-        if(this.block.content instanceof BlockText){ return "text" }
-        return "other";
-      },
       contentTypeText(): string {
-        let text = "Блок";
-        switch(this.contentType){
-          case "image": text = "Изображение"; break;
-          case "text": text = this.block.content?.text || ""; break;
+        const content = this.block.content;
+
+        if(content && content instanceof BlockText) {
+          return content.text
         }
-        return text;
+
+        if(content && content instanceof BlockImage) {
+          return "Изображение"
+        }
+
+        return "Блок";
       },
       backgroundImageStyle(): object {
-        if(this.contentType === "image" && this.isBlockMoving) {
+        const content = this.block.content;
+        if(content && content instanceof BlockImage) {
           return {
-            backgroundImage: `url(${this.block.content?.url || ""})`
+            backgroundImage: `url(${content.url || ""})`
           }
         }
         return {};
