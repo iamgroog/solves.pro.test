@@ -25,8 +25,7 @@ export default {
   // Global Style Imports
   styleResources: {
     scss: [
-      "@/style/vars/_colors.scss",
-      "@/style/vars/_sizes.scss"
+      "@/style/vars/*.scss"
     ]
   },
 
