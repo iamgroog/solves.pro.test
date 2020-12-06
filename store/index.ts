@@ -1,3 +1,5 @@
+import design from "./design";
+
 type Mode = "edit" | "preview";
 interface RootState {
   mode: Mode;
@@ -32,4 +34,8 @@ export const mutations = {
       state.mode = defaultMode;
     }
   }
+}
+
+export const modules = {
+  design
 }
