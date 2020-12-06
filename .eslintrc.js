@@ -18,7 +18,9 @@ module.exports = {
     "space-before-function-paren": 0,
     semi: 0,
     "eol-last": 0,
+    indent: 0,
+    "keyword-spacing": 0,
     "vue/name-property-casing": ["error", "kebab-case"],
-    indent: 0
+    "vue/require-default-prop": 0
   }
 }
