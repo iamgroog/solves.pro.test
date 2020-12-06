@@ -20,9 +20,9 @@
        */
       changeModeText(): string {
         switch (this.mode) {
-          case "preview": return "Предпросмотр";
+          case "preview": return "Редактировать";
           case "edit":
-          default: return "Редактировать";
+          default: return "Предпросмотр";
         }
       }
     },

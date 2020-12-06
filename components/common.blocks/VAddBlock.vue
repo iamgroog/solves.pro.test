@@ -3,23 +3,42 @@
     div.v-add-block__header Добавить блок
     div.v-add-block__body
       div.v-add-block__button.v-add-block__button_text(
-        @click="addText"
+        @click="addBlock('text')"
       ) Текст
       div.v-add-block__button.v-add-block__button_image(
-        @click="addImage"
+        @click="addBlock('image')"
       ) Картинка
 </template>
 
 <script lang="ts">
   import Vue from "vue"
+  import { mapMutations, mapActions, mapGetters } from "vuex";
+  import Container from "@/script/classes/Container"
+
   export default Vue.extend({
     name: "v-add-block",
+    props: {
+      block: {
+        type: Container
+      }
+    },
+    computed: {
+      ...mapGetters("design", [
+        "getBlockIndex"
+      ])
+    },
     methods: {
-      addText(){
-        console.log("VAddBlock :: addText");
-      },
-      addImage(){
-        console.log("VAddBlock :: addImage");
+      ...mapMutations("design", {
+        addBlock: "ADD_BLOCK"
+      }),
+      ...mapActions("design", [
+        "createBlock"
+      ]),
+      addBlock(type: "text" | "image"){
+        this.createBlock({
+          blockType: type,
+          index: this.getBlockIndex(this.block)
+        });
       }
     }
   })
