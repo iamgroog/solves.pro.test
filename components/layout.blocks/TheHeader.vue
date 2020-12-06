@@ -64,8 +64,13 @@
 
     // }
 
-    // &__toggle{
+    &__toggle{
+      padding: 5px 10px;
 
-    // }
+      border-radius: 5px;
+
+      color: $color-main;
+      background-color: $color-light;
+    }
   }
 </style>
