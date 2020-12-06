@@ -1,13 +1,9 @@
 <template lang="pug">
-  transition(
-    name="t-fade"
-    mode="out-in"
+  div.v-block-image(
+    :class="contentSizeClassModificator",
+    :style="{backgroundImage: 'url(' + block.url + ')'}"
+    :key="block.url"
   )
-    div.v-block-image(
-      :class="contentSizeClassModificator",
-      :style="{backgroundImage: 'url(' + block.url + ')'}"
-      :key="block.url"
-    )
 </template>
 
 <script lang="ts">
